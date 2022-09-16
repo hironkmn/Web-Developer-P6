@@ -1,6 +1,6 @@
 const Sauce = require("../models/Sauce")
 
-exports.addLikes = (req, res, next) => {
+exports.likesAndDislikes = (req, res, next) => {
     Sauce.findOne({_id: req.params.id})
         .then((like) => {
             if (!like.usersLiked.includes(req.body.userId) && req.body.like === 1){
